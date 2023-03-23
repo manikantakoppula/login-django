@@ -1,0 +1,28 @@
+{% extends 'csvtouser/base.html'%} 
+{%block title%}INDEX{%endblock%} 
+{% block content%}
+<div style="padding: 1%;">
+<table class="table table-striped">
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col" >Name</th>
+    <th scope="col" colspan="1">birthday</th>
+    <th scope="col">Gender</th>
+    <th scope="col">Email</th>
+    <th scope="col">Address</th>
+
+  </tr>
+  <!-- Iterate over object_list -->
+  {% for object in object_list %}
+  <tr>
+    <td colspan="1">{{ object.id }}</td>
+    <td colspan="1">{{ object.name }}</td>
+    <td colspan="1">{{ object.birthday }}</td>
+    <td colspan="1">{{ object.gender }}</td>
+    <td colspan="1">{{ object.email }}</td>
+    <td colspan="1">{{ object.street }}{{ object.city }}{{ object.state }}{{object.zipcode}}</td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+{%endblock%}

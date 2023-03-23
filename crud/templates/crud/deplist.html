@@ -1,0 +1,20 @@
+{% extends 'crud/base.html'%} 
+{%block title%}INDEX{%endblock%} 
+{% block content%}
+
+
+
+<a href="dadd" class="btn btn-primary" style="padding: 1%;"> ADD </a>
+{% for object in object_list %}
+<div >
+    <a href="{{object.id}}" class="display-1">{{ object.department}}</a>
+    <a href="{{object.id}}/ddelete" class="btn btn-danger">delete</a>
+    {%endfor%}
+</div>
+
+   
+
+
+
+
+{%endblock%}

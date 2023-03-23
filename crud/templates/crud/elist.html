@@ -1,0 +1,27 @@
+{% extends 'crud/base.html'%} 
+{%block title%}INDEX{%endblock%} 
+{% block content%}
+<div style="padding: 1%;">
+<a href="add" class="btn btn-primary" style="padding: 1%;"> ADD </a>
+
+<table class="table table-striped">
+  <tr>
+    <th scope="col" >employee name</th>
+    <th scope="col" colspan="1">salary</th>
+    <th scope="col" colspan="1">address</th>
+    <th scope="col">Delete</th>
+    <th scope="col">update</th>
+  </tr>
+  <!-- Iterate over object_list -->
+  {% for object in object_list %}
+  <tr>
+    <td colspan="1">{{ object.e_name }}</td>
+    <td colspan="1">{{ object.e_salary }}</td>
+    <td colspan="1"><address>{{ object.address }}</address></td>
+    <td colspan="1"><a href="/index/{{object.id}}/delete" class="btn btn-danger">delete</a></td>
+    <td colspan="1"><a href="/index/{{object.id}}/update" class="btn btn-warning">update</a></td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+{%endblock%}
